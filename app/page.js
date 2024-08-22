@@ -21,7 +21,7 @@ export default function Page() {
       days.push(
         <button
           key={day.format('DD-MM-YYYY')}
-          className={`rounded-lg p-2 text-center transition ease-in-out duration-300 ${
+          className={`rounded-lg p-2 text-center transition ease-in-out duration-300 h-16 ${
             isInCurrentMonth ? 'bg-white text-gray-800 hover:bg-gray-100' : 'text-gray-400'
           } shadow-md font-medium`}
         >
@@ -35,14 +35,16 @@ export default function Page() {
 
   return (
     <>
-      <div className="p-5 bg-white shadow-xl rounded-lg font-sans">
-        <div className="flex items-center justify-between text-gray-800">
-          <button onClick={() => setCurrentDate(currentDate.subtract(1, 'month'))} className="px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200">← 저번달</button>
-          <span className="font-semibold text-lg">{currentDate.format('MMMM YYYY')}</span>
-          <button onClick={() => setCurrentDate(currentDate.add(1, 'month'))} className="px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200">다음달 →</button>
-        </div>
-        <div className="grid grid-cols-7 gap-4 mt-5">
-          {daysArray()}
+      <div className="min-h-screen flex items-center justify-center w-2/3">
+        <div className="p-5 bg-white shadow-xl rounded-lg font-sans w-11/12 h-5/6">
+          <div className="flex items-center justify-between text-gray-800">
+            <button onClick={() => setCurrentDate(currentDate.subtract(1, 'month'))} className="px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200">이전</button>
+            <span className="font-semibold text-lg">{currentDate.format('MMMM YYYY')}</span>
+            <button onClick={() => setCurrentDate(currentDate.add(1, 'month'))} className="px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200">다음</button>
+          </div>
+          <div className="grid grid-cols-7 gap-4 mt-5 h-full">
+            {daysArray()}
+          </div>
         </div>
       </div>
     </>
