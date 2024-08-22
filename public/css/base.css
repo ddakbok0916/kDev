@@ -1,0 +1,354 @@
+/*base*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+    word-break: keep-all;
+    font-family: 'MinSans', '맑은고딕';
+}
+
+#wrap {
+    position: relative;
+    min-width: 270px;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+    -webkit-text-size-adjust: auto;
+    color: #000;
+    font-family: 'MinSans', '맑은고딕';
+}
+
+/*font*/
+.cafe {
+    font-family: 'Cafe24Ssurround';
+}
+
+.cafeair {
+    font-family: 'Cafe24SsurroundAir';
+    font-weight: 900;
+}
+
+.pyeong {
+    font-family: 'PyeongChangPeace-Bold';
+}
+
+/*bg*/
+/*color*/
+
+/*라운드*/
+textarea {
+    appearance: none;
+    color: #818181;
+    border: 1px solid #e6e6e6;
+    padding: 0.5rem;
+}
+
+/*input*/
+/*
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border: 1px solid #000;
+}*/
+
+.tit_input:focus,
+.textareabox:focus {
+    outline: none;
+}
+
+/* outline 테두리 속성 수정 */
+input.intt1::placeholder {
+    color: #999;
+    font-family: 'MinSans', '맑은고딕';
+    font-weight: 300;
+}
+
+input.intt1::placeholder {
+    color: #999;
+    font-family: 'MinSans', '맑은고딕';
+}
+
+input.intt1:-moz-placeholder {
+    color: #999;
+    font-family: 'MinSans', '맑은고딕';
+}
+
+input.intt1::-moz-placeholder {
+    color: #999;
+    font-family: 'MinSans', '맑은고딕';
+}
+
+textarea::placeholder {
+    font-family: 'NanumSquareNeo';
+
+}
+
+textarea:-moz-placeholder {
+    font-family: 'NanumSquareNeo';
+
+}
+
+textarea::-moz-placeholder {
+    font-family: 'NanumSquareNeo';
+}
+
+
+/*input 타블렛 이하 적용*/
+
+/*input*/
+/*chekbox*/
+.chbox1 {
+    cursor: pointer;
+}
+
+@media (max-width: 680px) {
+    .chbox1 {
+        align-items: stretch;
+    }
+}
+
+.chbox1>input {
+    position: relative;
+    appearance: none;
+    background: #ccc url('../images/contents/icon_check_w.png') no-repeat center center;
+    background-size: 13px;
+    border-radius: 5px;
+}
+
+
+
+.chbox1>input:checked {
+    background: #be1313 url('../images/contents/icon_check_w.png') no-repeat center center;
+    background-size: 13px;
+}
+
+.chbox1>input:checked+span {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+/*checkbox-radio*/
+/*select*/
+select.select1::-ms-expand {
+    display: none;
+}
+
+select.select1 {
+    background: #fff url('../images/contents/select_arrow.png') no-repeat;
+    background-size: 8px;
+    background-position: calc(100% - 10px) center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #e3e1f4;
+    padding: 0 35px 0px 15px;
+}
+
+select.select1:focus {
+    border: 1px solid #000;
+    outline: none;
+}
+
+
+/*select*/
+/*input*/
+
+
+/*font-*/
+/*img*/
+.imgt1 {
+    position: relative;
+    top: -1px
+}
+
+.imgt2 {
+    position: relative;
+    top: -2px
+}
+
+.imgswap img {
+    display: inline-block
+}
+
+.imgswap img:last-child {
+    display: none
+}
+
+.imgswap:hover img:first-child {
+    display: none
+}
+
+.imgswap:hover img:last-child {
+    display: inline-block
+}
+
+/*flex*/
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.width_box1 {
+    position: relative;
+    max-width: 1200px;
+    min-width: 270px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/****header***/
+header.event_header {
+    position: fixed;
+    min-width: 270px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+    background: none;
+    transition: all 0.2s;
+}
+
+header.event_header a>span.ttbg1 {
+    text-shadow: 2px 2px 2px rgba(218, 208, 188, 1);
+}
+
+header.event_header a>span.ttbg2 {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width:1023px) {
+    header.event_header {
+        flex-direction: column;
+    }
+}
+
+header.login_header.hactive {
+    background: rgba(244, 114, 34, 0.9);
+}
+
+header.photo_header.hactive {
+    background: rgba(246, 243, 237, 0.9);
+}
+
+header.faq_header.hactive {
+    background: rgba(96, 142, 220, 0.9);
+}
+
+
+
+
+/*navi*/
+nav {
+    position: relative;
+}
+
+nav>.navi {
+    justify-content: end;
+    align-items: center;
+}
+
+
+
+nav>.navi>li>a {
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000 !important;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.25s;
+}
+
+nav>.navi>li.sel>a {
+    background: #fff;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.07);
+}
+
+/*pc*/
+@media (min-width:1024px) {
+    nav>.navi>li>a:hover {
+        background: #fff;
+        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.07);
+    }
+}
+
+nav>.navi>li>a>span {
+    font-family: 'Cafe24Ssurround';
+    font-size: 20px;
+    letter-spacing: -0.04rem;
+}
+
+/*navi*/
+
+/*모바일 메뉴*/
+
+nav>a.mnav_btn {
+    color: #000;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    height: 50px;
+    letter-spacing: -0.04rem;
+    border-radius: 100px;
+
+}
+
+nav>a.mnav_btn>span {
+    font-family: 'Cafe24Ssurround';
+    font-size: 20px;
+}
+
+@media (max-width:1023px) {
+
+    nav,
+    nav>.navi>li {
+        width: 100%;
+    }
+
+    nav>a.mnav_btn {
+        display: flex;
+    }
+
+    .navi {
+        position: absolute;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 25px;
+        z-index: 5;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    nav>.navi>li>a,
+    nav>.navi>li.sel>a {
+        background: none;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    /*
+    nav>a.mnav_btn>span {
+        font-family: 'Cafe24Ssurround';
+        font-size: 20px;
+    }*/
+
+    nav>a.mnav_btn>span,
+    nav>.navi>li>a>span,
+    nav>.navi>li.sel>a>span {
+        font-size: 18px;
+    }
+
+
+}
+
+/*모바일메뉴*/
